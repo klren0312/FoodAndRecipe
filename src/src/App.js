@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import {TabBar,Icon} from 'antd-mobile';
- 
+import {TabBar} from 'antd-mobile';
+import Home from './component/home'
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: true,
-    };
+    }; 
   }
   renderContent(pageText) {
     return (
@@ -50,7 +50,8 @@ class App extends Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Home')}
+            {/* 首页 */}
+            <Home />
           </TabBar.Item>
           <TabBar.Item
             icon={

@@ -1,1 +1,84 @@
-im
+import React,{Component} from 'react'
+import { Carousel,NoticeBar,List,Checkbox   } from 'antd-mobile';
+import './index.css'
+const Item = List.Item;
+const CheckboxItem = Checkbox.CheckboxItem;
+class Home extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      data: ['1', '2', '3'],
+      imgHeight: 176,
+      slideIndex: 0,
+    }
+  }
+  componentDidMount() {
+    // simulate img loading
+    setTimeout(() => {
+      this.setState({
+        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+      });
+    }, 100);
+  }
+  onChange = (val) => {
+    console.log(val);
+  }
+  render(){
+    const data = [
+      { value: 0, label: '买鸡蛋' },
+      { value: 1, label: '买大白菜' },
+      { value: 2, label: '买萝卜' },
+    ];
+    return(
+      <div>
+        {/* 滚动通知 */}
+        <NoticeBar mode="closable" action={<span style={{ color: '#a1a1a1' }}>不再提示</span>}>
+          今天南天菜市场关停一天
+        </NoticeBar>
+        {/* 滑动图 */}
+        <Carousel
+          autoplay={false}
+          infinite
+          selectedIndex={1}
+          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+          afterChange={index => console.log('slide to', index)}
+        >
+          {this.state.data.map(val => (
+            <a
+              key={val}
+              href="#"
+              style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+            >
+              <img
+                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+            </a>
+          ))}
+        </Carousel>
+        {/* 通知栏 */}
+        <List renderHeader={() => '通知栏'} className="my-list">
+          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+        </List>
+        {/* Shopping List */}
+        <List renderHeader={() => '购物清单'}>
+          {data.map(i => (
+            <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </CheckboxItem>
+          ))}
+        </List>
+      </div>
+    )
+  }
+}
+
+export default Home
