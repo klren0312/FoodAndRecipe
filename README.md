@@ -6,6 +6,10 @@
  - react
  - ant.design
 
+## 使用cordova插件
+
+ - `cordova-plugin-splashscreen` 启动页插件
+
 ## 使用命令
 1.开发页面
 ```
