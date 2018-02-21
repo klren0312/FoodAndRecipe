@@ -16,7 +16,7 @@ class Home extends Component{
     // simulate img loading
     setTimeout(() => {
       this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+        data: ['16160674/thumb_raw_1515291682.jpeg', '16161362/thumb_raw_1515296260.png' ],
       });
     }, 100);
   }
@@ -49,8 +49,10 @@ class Home extends Component{
               href="#"
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
             >
+            {/* https://zos.alipayobjects.com/rmsportal/${val}.png */}
+            
               <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                src={`https://modao.cc/uploads3/images/1616/${val}`}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {

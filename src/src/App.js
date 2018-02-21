@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {TabBar} from 'antd-mobile';
 import Home from './component/home'
+ 
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ class App extends Component {
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+              background: 'url(HomeIcon) center center /  21px 21px no-repeat' }}
             />
             }
             selectedIcon={<div style={{
