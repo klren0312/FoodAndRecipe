@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {TabBar} from 'antd-mobile';
 import Home from './component/home'
+import Market from './component/market'
  
 class App extends Component {
   constructor(props) {
@@ -33,13 +34,13 @@ class App extends Component {
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(HomeIcon) center center /  21px 21px no-repeat' }}
+              background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/home.svg) center center /  21px 21px no-repeat' }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+              background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/homeac.svg) center center /  21px 21px no-repeat' }}
             />
             }
             selected={this.state.selectedTab === 'blueTab'}
@@ -59,19 +60,18 @@ class App extends Component {
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/market.svg) center center /  21px 21px no-repeat' }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/marketac.svg) center center /  21px 21px no-repeat' }}
               />
             }
             title="菜市场"
             key="Market"
-
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
               this.setState({
@@ -80,21 +80,22 @@ class App extends Component {
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Market')}
+            {/* 菜市场 */}
+            <Market />
           </TabBar.Item>
           <TabBar.Item
             icon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/recipe.svg) center center /  21px 21px no-repeat' }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                background: 'url(https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/recipeac.svg) center center /  21px 21px no-repeat' }}
               />
             }
             title="菜谱"
@@ -109,8 +110,8 @@ class App extends Component {
             {this.renderContent('Recipe')}
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+            icon={{ uri: 'https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/my.svg' }}
+            selectedIcon={{ uri: 'https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/myac.svg' }}
             title="我的"
             key="My"
             selected={this.state.selectedTab === 'yellowTab'}
