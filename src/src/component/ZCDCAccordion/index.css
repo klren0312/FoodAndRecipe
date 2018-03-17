@@ -1,0 +1,16 @@
+.my-accordion .pad .am-accordion-content-box {
+  padding: 10px;
+}
+
+.my-list {
+  position: relative;
+}
+.foodDetail {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.my-list .my-list-child {
+  height: 50px;
+}

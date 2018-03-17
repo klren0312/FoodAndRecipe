@@ -9,7 +9,7 @@ class Home extends Component{
     this.state = {
       data: ['1', '2', '3'],
       imgHeight: 176,
-      slideIndex: 0,
+      slideIndex: 0
     }
   }
   componentDidMount() {
@@ -46,11 +46,9 @@ class Home extends Component{
           {this.state.data.map(val => (
             <a
               key={val}
-              href="#"
+              href="javascript(void);"
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
             >
-            {/* https://zos.alipayobjects.com/rmsportal/${val}.png */}
-            
               <img
                 src={`https://modao.cc/uploads3/images/1616/${val}`}
                 alt=""
