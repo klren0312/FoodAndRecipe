@@ -2,16 +2,14 @@ import React from 'react'
 import {NavBar,Icon} from 'antd-mobile'
 
 class MyNavBar extends React.Component {
-  constructor(props){
-    super(props)
-  }
+
   render(){
-    const {title,myIcon,leftClick} = this.props
+    const {title,myicon} = this.props
     return (
       <div>
         <NavBar
           mode='light'
-          icon={<Icon type={myIcon} />}
+          icon={<Icon type={myicon} />}
           {...this.props}
         >
           {title}
