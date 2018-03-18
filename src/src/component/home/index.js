@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
-import { Carousel,NoticeBar,List,Checkbox   } from 'antd-mobile';
+import { Carousel,NoticeBar,List,Checkbox   } from 'antd-mobile'
 import './index.css'
+import {withRouter} from 'react-router-dom'
 const Item = List.Item;
 const CheckboxItem = Checkbox.CheckboxItem;
 class Home extends Component{
@@ -64,9 +65,9 @@ class Home extends Component{
         </Carousel>
         {/* 通知栏 */}
         <List renderHeader={() => '通知栏'} className="my-list">
-          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
-          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
-          <Item extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item onClick={()=>this.props.history.push('/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item key='2' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item key='3' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
         </List>
         {/* Shopping List */}
         <List renderHeader={() => '购物清单'}>
@@ -81,4 +82,4 @@ class Home extends Component{
   }
 }
 
-export default Home
+export default withRouter(Home)

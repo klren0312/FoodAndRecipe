@@ -35,7 +35,7 @@ class Market extends Component {
   
   render(){
     const getRecommend = (word)=> {
-      console.log(word)
+      // console.log(word)
     }
     return(
       <div>
