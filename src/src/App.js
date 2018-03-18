@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import {TabBar} from 'antd-mobile';
+import React, { Component } from 'react'
+import {TabBar} from 'antd-mobile'
 import Home from './component/home'
 import Market from './component/market'
- 
+import {withRouter} from 'react-router-dom'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -49,6 +50,7 @@ class App extends Component {
               this.setState({
                 selectedTab: 'blueTab',
               });
+              
             }}
             data-seed="logId"
           >
@@ -76,7 +78,8 @@ class App extends Component {
             onPress={() => {
               this.setState({
                 selectedTab: 'redTab',
-              });
+              })
+              
             }}
             data-seed="logId1"
           >
@@ -105,6 +108,7 @@ class App extends Component {
               this.setState({
                 selectedTab: 'greenTab',
               });
+              
             }}
           >
             {this.renderContent('Recipe')}
@@ -118,7 +122,8 @@ class App extends Component {
             onPress={() => {
               this.setState({
                 selectedTab: 'yellowTab',
-              });
+              })
+              
             }}
           >
             {this.renderContent('My')}
@@ -129,4 +134,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App)

@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import App from './App'
+import Router from './router'
+import registerServiceWorker from './registerServiceWorker'
 const startApp = () => {
   ReactDOM.render(
-    <App />, document.getElementById('root')
+    <Router />, document.getElementById('root')
   )
 }
 if(!window.cordova){
@@ -13,4 +14,4 @@ if(!window.cordova){
 } else {
   document.addEventListener('deviceready', startApp, false)
 }
-registerServiceWorker();
+registerServiceWorker()
