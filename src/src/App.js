@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {TabBar} from 'antd-mobile'
 import Home from './component/home'
 import Market from './component/market'
+import Recipe from './component/recipe'
 import {withRouter} from 'react-router-dom'
 
 class App extends Component {
@@ -111,7 +112,7 @@ class App extends Component {
               
             }}
           >
-            {this.renderContent('Recipe')}
+            <Recipe />
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: 'https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/my.svg' }}

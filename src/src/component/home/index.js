@@ -65,7 +65,7 @@ class Home extends Component{
         </Carousel>
         {/* 通知栏 */}
         <List renderHeader={() => '通知栏'} className="my-list">
-          <Item onClick={()=>this.props.history.push('/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item onClick={()=>this.props.history.push('/ttt/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
           <Item key='2' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
           <Item key='3' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
         </List>

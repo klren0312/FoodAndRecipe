@@ -2,6 +2,7 @@ import React from 'react'
 import MyNavBar from '../myNavBar'
 import {withRouter} from 'react-router-dom'
 class Tips extends React.Component {
+
   render(){
     return (
       <div>
