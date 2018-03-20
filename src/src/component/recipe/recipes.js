@@ -1,14 +1,15 @@
 import React from 'react'
 import MyNavBar from '../myNavBar'
 import {withRouter} from 'react-router-dom'
-class Tips extends React.Component {
+class Recipes extends React.Component {
 
   render(){
+    const title = this.props.match.params.name
     return (
       <div>
         <MyNavBar 
           myicon='left'
-          title='通知'
+          title={title}
           onLeftClick={()=>this.props.history.push('/')}
         />
       </div>
@@ -16,4 +17,4 @@ class Tips extends React.Component {
   }
 }
 
-export default withRouter(Tips)
+export default withRouter(Recipes)

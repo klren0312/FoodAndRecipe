@@ -8,6 +8,11 @@ class Home extends Component{
   constructor(props){
     super(props)
     this.state = {
+      shoppingList: [
+        { value: 0, label: '买鸡蛋' },
+        { value: 1, label: '买大白菜' },
+        { value: 2, label: '买萝卜' },
+      ],
       data: ['1', '2', '3'],
       imgHeight: 176,
       slideIndex: 0
@@ -25,11 +30,6 @@ class Home extends Component{
     console.log(val);
   }
   render(){
-    const data = [
-      { value: 0, label: '买鸡蛋' },
-      { value: 1, label: '买大白菜' },
-      { value: 2, label: '买萝卜' },
-    ];
     return(
       <div>
         {/* 滚动通知 */}
@@ -65,13 +65,13 @@ class Home extends Component{
         </Carousel>
         {/* 通知栏 */}
         <List renderHeader={() => '通知栏'} className="my-list">
-          <Item onClick={()=>this.props.history.push('/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          <Item onClick={()=>this.props.history.push('/news/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
           <Item key='2' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
           <Item key='3' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
         </List>
         {/* Shopping List */}
         <List renderHeader={() => '购物清单'}>
-          {data.map(i => (
+          {this.state.shoppingList.map(i => (
             <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
               {i.label}
             </CheckboxItem>

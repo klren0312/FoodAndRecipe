@@ -4,6 +4,7 @@
 
  - cordova
  - react
+ - react router v4
  - ant.design
 
 ## 使用cordova插件
@@ -34,3 +35,6 @@ $ cordova run android
  - 2018/3/15 底部栏图片修改，添加菜市场搜索框
  - 2018/3/17 菜市场页面开发
  - 2018/3/18 添加react router v4 ，添加navbar组件,完成通知详情页的制作
+ - 2018/3/19 完成菜谱页面制作
+ - 2018/3/20 完善菜谱页面，我的页面开始制作
+ 
