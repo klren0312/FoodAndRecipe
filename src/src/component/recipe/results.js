@@ -8,7 +8,7 @@ class Results extends React.Component {
       <div style={{padding:"10px"}}>
         {
           results.map((result,i)=>{
-           return <div><WhiteSpace size="lg" />
+           return <div key={i}><WhiteSpace size="lg" />
            <Card>
             <Card.Header
               key={i}
@@ -16,7 +16,7 @@ class Results extends React.Component {
               thumb={result.img}
             />
             <Card.Body>
-              <div style={{color:"rgba(0,0,0,0.5)"}}>
+              <div style={{color:"rgba(0,0,0,0.7)"}}>
                 {result.content}
                 <Link to={result.link} style={{color:"rgba(0,0,0,0.9)"}}>更多</Link>
               </div>

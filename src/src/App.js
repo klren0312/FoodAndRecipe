@@ -3,6 +3,7 @@ import {TabBar} from 'antd-mobile'
 import Home from './component/home'
 import Market from './component/market'
 import Recipe from './component/recipe'
+import My from './component/my'
 import {withRouter} from 'react-router-dom'
 
 class App extends Component {
@@ -127,7 +128,7 @@ class App extends Component {
               
             }}
           >
-            {this.renderContent('My')}
+            <My />
           </TabBar.Item>
         </TabBar>
       </div>
