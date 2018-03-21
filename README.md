@@ -24,6 +24,7 @@ $ cd src
 $ yarn build
 $ cd ..
 $ cordova platform add android
+$ cordova build
 $ cordova run android
 ```
 
