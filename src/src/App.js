@@ -15,6 +15,7 @@ class App extends Component {
       fullScreen: true,
     }; 
   }
+  
   renderContent(pageText) {
     return (
       <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>

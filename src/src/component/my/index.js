@@ -1,35 +1,10 @@
 import React from 'react'
-import {Grid,WhiteSpace,List,Checkbox} from 'antd-mobile'
+import {Flex,WhiteSpace} from 'antd-mobile'
+import {withRouter} from 'react-router-dom'
 import './index.css'
-const CheckboxItem = Checkbox.CheckboxItem;
-class My extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      shoppingList:[
-        { value: 0, label: '买鸡蛋' },
-        { value: 1, label: '买大白菜' },
-        { value: 2, label: '买萝卜' },
-      ]
-    }
-  }
-  onChange = (val) => {
-    console.log(val);
-  }
-  addShoppingList = () => {
-    return (
-      <div>
-        <span>购物清单</span>
 
-      </div>
-    )
-  }
+class My extends React.Component {
   render() {
-    
-    const data = Array.from(new Array(4)).map((_val, i) => ({
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `name${i}`,
-    }))
     return (
       <div>
         <div className="person">
@@ -37,18 +12,22 @@ class My extends React.Component {
         </div>
         <WhiteSpace />
         <div>
-          <Grid data={data} square   onClick={_el => console.log(_el)} />
+          <Flex>
+            <Flex.Item>
+              <div onClick={()=>this.props.history.push('/callback')} className="feature">
+                <img className="feature-icon" alt="callback" src="https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/callback.svg" />
+              </div>
+            </Flex.Item>
+            <Flex.Item>
+            <div onClick={()=>this.props.history.push('/todolist')} className="feature">
+              <img className="feature-icon" alt="todolist" src="https://zzes-1251916954.cos.ap-shanghai.myqcloud.com/todolist.svg" />
+            </div>
+            </Flex.Item>
+          </Flex>
         </div>
-        {/* Shopping List */}
-        <List renderHeader={() => {}}>
-          {this.state.shoppingList.map(i => (
-            <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </CheckboxItem>
-          ))}
-        </List>
+        
       </div>
     )
   }
 }
-export default My
+export default withRouter(My)
