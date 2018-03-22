@@ -1,0 +1,7 @@
+{
+  "data": {
+    "place":"南天菜市场",
+    "date":"@date(yyyy-MM-dd)",
+    "content|100":"@String"
+  }
+}
