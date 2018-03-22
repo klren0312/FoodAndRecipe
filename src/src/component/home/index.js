@@ -9,9 +9,9 @@ class Home extends Component{
     super(props)
     this.state = {
       shoppingList: [
-        { value: 0, label: '买鸡蛋' },
-        { value: 1, label: '买大白菜' },
-        { value: 2, label: '买萝卜' },
+        {id:0, label: '买鸡蛋' ,checked:true},
+        {id:1, label: '买大白菜',checked:true },
+        {id:2, label: '买萝卜',checked:true },
       ],
       data: ['1', '2', '3'],
       imgHeight: 176,
@@ -70,10 +70,10 @@ class Home extends Component{
           <Item key='3' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
         </List>
         {/* Shopping List */}
-        <List renderHeader={() => '购物清单'}>
-          {this.state.shoppingList.map(i => (
-            <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
+        <List  renderHeader={() => {}}>
+          {this.state.shoppingList.map((v,i)=> (
+            <CheckboxItem key={i} onChange={() => this.onChange(v.label)} checked={v.checked}>
+              {v.label}
             </CheckboxItem>
           ))}
         </List>
