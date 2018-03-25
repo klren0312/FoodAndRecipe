@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import { Carousel,NoticeBar,List,Checkbox   } from 'antd-mobile'
 import './index.css'
 import {withRouter} from 'react-router-dom'
+import axios from '../../util'
 const Item = List.Item;
 const CheckboxItem = Checkbox.CheckboxItem;
 class Home extends Component{
@@ -13,12 +14,41 @@ class Home extends Component{
         {id:1, label: '买大白菜',checked:true },
         {id:2, label: '买萝卜',checked:true },
       ],
+      news:[],
+      topnews:'',
       data: ['1', '2', '3'],
       imgHeight: 176,
       slideIndex: 0
     }
   }
   componentDidMount() {
+    // 请求头条
+    axios.request({
+      url:'/topnews',
+      method:'get'
+    }).then(res=>{
+      this.setState({
+        topnews:res.data.topnews
+      })
+    })
+    //请求通知
+    axios.request({
+      url:'/news',
+      method:'get'
+    }).then(res=>{
+      this.setState({
+        news:res.data.news
+      })
+    })
+    //请求购物清单
+    axios.request({
+      url:'/shoppinglist',
+      method:'get'
+    }).then(res=>{
+      this.setState({
+        shoppingList:res.data.shoppingList
+      })
+    })
     // simulate img loading
     setTimeout(() => {
       this.setState({
@@ -34,7 +64,7 @@ class Home extends Component{
       <div>
         {/* 滚动通知 */}
         <NoticeBar mode="closable" action={<span style={{ color: '#a1a1a1' }}>不再提示</span>}>
-          今天南天菜市场关停一天
+          {this.state.topnews}
         </NoticeBar>
         {/* 滑动图 */}
         <Carousel
@@ -65,12 +95,12 @@ class Home extends Component{
         </Carousel>
         {/* 通知栏 */}
         <List renderHeader={() => '通知栏'} className="my-list">
-          <Item onClick={()=>this.props.history.push('/news/ttt')} key='1' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
-          <Item key='2' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
-          <Item key='3' extra={'2018/1/12'}>今天所以菜市场菜品半价！</Item>
+          {this.state.news.map((v,i)=>{
+            return <Item onClick={()=>this.props.history.push('/news/'+v.id)} key={i} extra={v.date}>{v.title}</Item>
+          })}  
         </List>
         {/* Shopping List */}
-        <List  renderHeader={() => {}}>
+        <List  renderHeader={() => '购物清单'} className="my-list">
           {this.state.shoppingList.map((v,i)=> (
             <CheckboxItem key={i} onChange={() => this.onChange(v.label)} checked={v.checked}>
               {v.label}
