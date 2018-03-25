@@ -1,0 +1,16 @@
+{
+  "data": {
+    "market|10": [{
+      "title": '南天菜市场@String',
+      "info": [{
+        "name": '猪肉',
+        "price": 10,
+        "place": '88号摊位'
+      }, {
+        "name": '大白菜',
+        "price": 2,
+        "place": '84号摊位'
+      }]
+    }]
+  }
+}

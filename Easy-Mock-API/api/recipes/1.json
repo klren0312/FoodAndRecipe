@@ -1,0 +1,6 @@
+{
+  "data": {
+    "image": "@image('200x100', '#4A7BF7', '菜谱图片')",
+    "content|100": "@String"
+  }
+}
