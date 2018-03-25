@@ -2,7 +2,7 @@ import React from 'react'
 import {SearchBar} from 'antd-mobile'
 import Results from './results'
 import './index.css'
-
+import axios from '../../util'
 class Recipe extends React.Component {
   constructor(props){
     super(props)
@@ -22,7 +22,16 @@ class Recipe extends React.Component {
       }]
     }
   }
-
+  componentDidMount() {
+    axios.request({
+      url:'/recipes',
+      method:'get'
+    }).then(res=>{
+      this.setState({
+        results:res.data.results
+      })
+    })
+  }
   render() {
     const getRecommend = ()=>{
       

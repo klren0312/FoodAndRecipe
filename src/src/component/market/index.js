@@ -1,35 +1,23 @@
 import React,{Component} from 'react'
 import {SearchBar} from 'antd-mobile'
 import ZCDCAccordion from '../ZCDCAccordion'
-
+import axios from '../../util'
 class Market extends Component {
   constructor(props){
     super(props)
     this.state=({
       recommend:{},
-      markets: [{
-        title:'南天菜市场',
-        info: [{
-          name:'猪肉',
-          price:10,
-          place:'88号摊位'
-        },{
-          name:'白菜',
-          price:3,
-          place:'88号摊位'
-        }]
-      },{
-        title:'人民菜市场',
-        info: [{
-          name:'猪肉',
-          price:10,
-          place:'88号摊位'
-        },{
-          name:'白菜',
-          price:3,
-          place:'88号摊位'
-        }]
-      }]
+      markets: []
+    })
+  }
+  componentDidMount(){
+    axios.request({
+      url:'/allmarket',
+      method:'get'
+    }).then(res=>{
+      this.setState({
+        markets:res.data.market
+      })
     })
   }
   
